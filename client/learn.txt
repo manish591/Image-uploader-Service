@@ -1,0 +1,83 @@
+1. Learn about cors package
+2. Inside models add createdat and updatedat
+3. .gitkeep file
+4. Generate .gitignore from gitignore generator https://mrkandreev.name/snippets/gitignore-generator/
+5. Create files from command line
+6. Similar functionality as nodemon is node index.js --watch
+7. learn about dotenv package
+2. Learn about cookie-parser
+Learn about built in express middlewares like express.json() and express.urlEncoded(), urlencoded is used to decode the data send
+to backend using urls like in query params, in these two read about limit option
+
+express.static("foldername");
+learn about express-boom for errors
+learn about custom api errors and api responses and also a wrapper function around async functions
+Read about mongodb aggregation pipeline from this documentation https://www.mongodb.com/docs/manual/core/aggregation-pipeline/
+also read other documentation part for solidifying mongodb knowledge
+
+Also read about package mongooser-aggregate-paginate-v2
+
+Learn about bcrypt to hash password
+also about jwt
+
+learn about mongoose pre hook, this we will use to hash password. It runs just before the data is going to saved on the db
+In this hook we will hash the password using bcrypt
+
+this.isModified("password"); // this is mongoose specific that tells which field got modified
+
+Learn about mongoose methods. schema.methods = function to add
+
+ACCESS_TOKEN_SECRET, ACCESS_TOKEN_EXPIRY, REFRESH_TOKEN_SECRET, REFRESH_TOKEN_EXPIRY, add these to your env file
+
+Also add methods to generate access tokens and refresh tokens in schema methods using mongoose methods
+
+When you update the environment varaibles then you have to restart the node js server. 
+
+$or- these are methods in mongodb
+
+After you have successfully create a user entry in the database then fetch the current user you have created and then get
+add this user to the req.user = createdUser. We can select few properties from the user object. Like we can remove
+password and token from the user using mongoose sleect.
+
+Learn about postman collections and environments
+
+validateBeforesave in mongoose, set to false when storing tokens
+
+learn about cookies option {
+  httpOnly: true,
+  secure: true
+}
+
+Read about refresh token from here https://github.com/Real-Dev-Squad/website-backend/blob/develop/middlewares/authenticate.js
+
+Read about morgan package for global logging
+also helmet package
+
+// Middleware to add security headers. Few headers have been disabled as it does not serve any purpose for the API.
+  app.use(
+    helmet({
+      contentSecurityPolicy: false,
+      dnsPrefetchControl: false,
+      ieNoOpen: false,
+      referrerPolicy: false,
+      xssFilter: false,
+    })
+  );
+
+   app.use(
+    cors({
+      origin: config.get("cors.allowedOrigins"),
+      credentials: true,
+      optionsSuccessStatus: 200,
+    })
+  );
+
+  Read about passport package
+
+  Read about rate limiting from here https://github.com/Real-Dev-Squad/website-backend/blob/develop/middlewares/rateLimiting.js
+
+  also throw an error if content type is not mutlipart or application/json
+
+Read about attaching response header in api https://github.com/Real-Dev-Squad/website-backend/blob/develop/middlewares/responseHeaders.js
+app.use("/", responseHeaders, indexRouter);
+attach responseHeaders with every API
