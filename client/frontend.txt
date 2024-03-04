@@ -1,7 +1,0 @@
-1. Create a new vite application
-  i. npm create vite@latest
-  ii. Now, select React or any other framework. Then select typescript
-
-2. User axios over fetch
-3. Put base URL in env
-4. Learn about vite proxy https://vitejs.dev/config/server-options
