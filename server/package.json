@@ -2,12 +2,11 @@
   "name": "image-uploader-service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "tsc": "tsc",
+    "build": "tsc -b",
     "start": "node ./dist/server.js",
-    "dev": "nodemon --exec tsx server.ts",
+    "dev": "npm run build && nodemon ./dist/server.js",
     "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
